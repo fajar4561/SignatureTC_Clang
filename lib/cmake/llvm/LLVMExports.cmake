@@ -200,7 +200,7 @@ set_target_properties(LLVMFrontendOpenACC PROPERTIES
 add_library(LLVMFrontendOpenMP STATIC IMPORTED)
 
 set_target_properties(LLVMFrontendOpenMP PROPERTIES
-  INTERFACE_LINK_LIBRARIES "LLVMCore;LLVMSupport;LLVMTransformUtils"
+  INTERFACE_LINK_LIBRARIES "LLVMCore;LLVMSupport;LLVMTransformUtils;LLVMAnalysis;LLVMMC;LLVMScalarOpts"
 )
 
 # Create imported target LLVMTransformUtils
@@ -242,7 +242,7 @@ set_target_properties(LLVMScalarOpts PROPERTIES
 add_library(LLVMipo STATIC IMPORTED)
 
 set_target_properties(LLVMipo PROPERTIES
-  INTERFACE_LINK_LIBRARIES "LLVMAggressiveInstCombine;LLVMAnalysis;LLVMBitReader;LLVMBitWriter;LLVMCore;LLVMFrontendOpenMP;LLVMInstCombine;LLVMIRReader;LLVMLinker;LLVMObject;LLVMProfileData;LLVMScalarOpts;LLVMSupport;LLVMTransformUtils;LLVMVectorize;LLVMInstrumentation"
+  INTERFACE_LINK_LIBRARIES "LLVMAggressiveInstCombine;LLVMAnalysis;LLVMBitReader;LLVMBitWriter;LLVMCore;LLVMFrontendOpenMP;LLVMInstCombine;LLVMIRReader;LLVMLinker;LLVMObject;LLVMProfileData;LLVMScalarOpts;LLVMSupport;LLVMTransformUtils;LLVMVectorize;LLVMInstrumentation;LLVMScalarOpts"
 )
 
 # Create imported target LLVMVectorize
@@ -431,21 +431,21 @@ set_target_properties(LLVMMCJIT PROPERTIES
 add_library(LLVMOrcJIT STATIC IMPORTED)
 
 set_target_properties(LLVMOrcJIT PROPERTIES
-  INTERFACE_LINK_LIBRARIES "\$<LINK_ONLY:LLVMAnalysis>;\$<LINK_ONLY:LLVMBitReader>;\$<LINK_ONLY:LLVMBitWriter>;\$<LINK_ONLY:LLVMPasses>;LLVMCore;LLVMExecutionEngine;LLVMJITLink;LLVMObject;LLVMOrcShared;LLVMOrcTargetProcess;LLVMMC;LLVMPasses;LLVMRuntimeDyld;LLVMSupport;LLVMTarget;LLVMTransformUtils"
+  INTERFACE_LINK_LIBRARIES "-lpthread;\$<LINK_ONLY:LLVMAnalysis>;\$<LINK_ONLY:LLVMBitReader>;\$<LINK_ONLY:LLVMBitWriter>;\$<LINK_ONLY:LLVMPasses>;LLVMCore;LLVMExecutionEngine;LLVMJITLink;LLVMObject;LLVMOrcShared;LLVMOrcTargetProcess;LLVMMC;LLVMPasses;LLVMRuntimeDyld;LLVMSupport;LLVMTarget;LLVMTransformUtils"
 )
 
 # Create imported target LLVMOrcShared
 add_library(LLVMOrcShared STATIC IMPORTED)
 
 set_target_properties(LLVMOrcShared PROPERTIES
-  INTERFACE_LINK_LIBRARIES "LLVMSupport"
+  INTERFACE_LINK_LIBRARIES "-lpthread;LLVMSupport"
 )
 
 # Create imported target LLVMOrcTargetProcess
 add_library(LLVMOrcTargetProcess STATIC IMPORTED)
 
 set_target_properties(LLVMOrcTargetProcess PROPERTIES
-  INTERFACE_LINK_LIBRARIES "LLVMOrcShared;LLVMSupport"
+  INTERFACE_LINK_LIBRARIES "-lpthread;LLVMOrcShared;LLVMSupport"
 )
 
 # Create imported target LLVMRuntimeDyld
@@ -494,7 +494,7 @@ set_target_properties(LLVMARMDesc PROPERTIES
 add_library(LLVMARMInfo STATIC IMPORTED)
 
 set_target_properties(LLVMARMInfo PROPERTIES
-  INTERFACE_LINK_LIBRARIES "LLVMSupport"
+  INTERFACE_LINK_LIBRARIES "LLVMMC;LLVMSupport"
 )
 
 # Create imported target LLVMARMUtils
@@ -536,7 +536,7 @@ set_target_properties(LLVMAArch64Desc PROPERTIES
 add_library(LLVMAArch64Info STATIC IMPORTED)
 
 set_target_properties(LLVMAArch64Info PROPERTIES
-  INTERFACE_LINK_LIBRARIES "LLVMSupport"
+  INTERFACE_LINK_LIBRARIES "LLVMMC;LLVMSupport"
 )
 
 # Create imported target LLVMAArch64Utils
