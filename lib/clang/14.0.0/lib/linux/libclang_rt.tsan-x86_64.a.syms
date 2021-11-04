@@ -285,6 +285,8 @@
   __interceptor_poll;
   __interceptor_popen;
   __interceptor_posix_memalign;
+  __interceptor_posix_spawn;
+  __interceptor_posix_spawnp;
   __interceptor_ppoll;
   __interceptor_prctl;
   __interceptor_pread;
@@ -1565,6 +1567,8 @@
   poll;
   popen;
   posix_memalign;
+  posix_spawn;
+  posix_spawnp;
   ppoll;
   prctl;
   pread;
