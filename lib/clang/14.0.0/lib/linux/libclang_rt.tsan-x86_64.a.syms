@@ -83,6 +83,7 @@
   __interceptor_clock_getres;
   __interceptor_clock_gettime;
   __interceptor_clock_settime;
+  __interceptor_clone;
   __interceptor_close;
   __interceptor_closedir;
   __interceptor_confstr;
@@ -1366,6 +1367,7 @@
   clock_getres;
   clock_gettime;
   clock_settime;
+  clone;
   close;
   closedir;
   confstr;
