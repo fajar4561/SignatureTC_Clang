@@ -15,6 +15,7 @@
   __interceptor_memalign;
   __interceptor_posix_memalign;
   __interceptor_pthread_create;
+  __interceptor_pthread_join;
   __interceptor_pvalloc;
   __interceptor_realloc;
   __interceptor_reallocarray;
@@ -104,6 +105,7 @@
   memalign;
   posix_memalign;
   pthread_create;
+  pthread_join;
   pvalloc;
   realloc;
   reallocarray;

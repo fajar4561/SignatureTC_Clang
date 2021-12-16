@@ -444,6 +444,16 @@ set_target_properties(LLVMRemarks PROPERTIES
 list(APPEND _IMPORT_CHECK_TARGETS LLVMRemarks )
 list(APPEND _IMPORT_CHECK_FILES_FOR_LLVMRemarks "${_IMPORT_PREFIX}/lib/libLLVMRemarks.a" )
 
+# Import target "LLVMDebuginfod" for configuration "Release"
+set_property(TARGET LLVMDebuginfod APPEND PROPERTY IMPORTED_CONFIGURATIONS RELEASE)
+set_target_properties(LLVMDebuginfod PROPERTIES
+  IMPORTED_LINK_INTERFACE_LANGUAGES_RELEASE "CXX"
+  IMPORTED_LOCATION_RELEASE "${_IMPORT_PREFIX}/lib/libLLVMDebuginfod.a"
+  )
+
+list(APPEND _IMPORT_CHECK_TARGETS LLVMDebuginfod )
+list(APPEND _IMPORT_CHECK_FILES_FOR_LLVMDebuginfod "${_IMPORT_PREFIX}/lib/libLLVMDebuginfod.a" )
+
 # Import target "LLVMDebugInfoDWARF" for configuration "Release"
 set_property(TARGET LLVMDebugInfoDWARF APPEND PROPERTY IMPORTED_CONFIGURATIONS RELEASE)
 set_target_properties(LLVMDebugInfoDWARF PROPERTIES
@@ -1016,6 +1026,15 @@ set_target_properties(llvm-cxxmap PROPERTIES
 
 list(APPEND _IMPORT_CHECK_TARGETS llvm-cxxmap )
 list(APPEND _IMPORT_CHECK_FILES_FOR_llvm-cxxmap "${_IMPORT_PREFIX}/bin/llvm-cxxmap" )
+
+# Import target "llvm-debuginfod-find" for configuration "Release"
+set_property(TARGET llvm-debuginfod-find APPEND PROPERTY IMPORTED_CONFIGURATIONS RELEASE)
+set_target_properties(llvm-debuginfod-find PROPERTIES
+  IMPORTED_LOCATION_RELEASE "${_IMPORT_PREFIX}/bin/llvm-debuginfod-find"
+  )
+
+list(APPEND _IMPORT_CHECK_TARGETS llvm-debuginfod-find )
+list(APPEND _IMPORT_CHECK_FILES_FOR_llvm-debuginfod-find "${_IMPORT_PREFIX}/bin/llvm-debuginfod-find" )
 
 # Import target "llvm-diff" for configuration "Release"
 set_property(TARGET llvm-diff APPEND PROPERTY IMPORTED_CONFIGURATIONS RELEASE)
