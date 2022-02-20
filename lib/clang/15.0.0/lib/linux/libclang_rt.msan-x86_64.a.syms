@@ -467,6 +467,7 @@
   __interceptor_strpbrk;
   __interceptor_strptime;
   __interceptor_strrchr;
+  __interceptor_strsignal;
   __interceptor_strspn;
   __interceptor_strstr;
   __interceptor_strtod;
@@ -1748,6 +1749,7 @@
   strpbrk;
   strptime;
   strrchr;
+  strsignal;
   strspn;
   strstr;
   strtod;
