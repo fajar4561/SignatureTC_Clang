@@ -326,7 +326,7 @@ set_target_properties(LLVMMCA PROPERTIES
 add_library(LLVMObjCopy STATIC IMPORTED)
 
 set_target_properties(LLVMObjCopy PROPERTIES
-  INTERFACE_LINK_LIBRARIES "LLVMObject;LLVMSupport;LLVMMC"
+  INTERFACE_LINK_LIBRARIES "LLVMBinaryFormat;LLVMObject;LLVMSupport;LLVMMC"
 )
 
 # Create imported target LLVMObject
@@ -361,7 +361,7 @@ set_target_properties(LLVMRemarks PROPERTIES
 add_library(LLVMDebuginfod STATIC IMPORTED)
 
 set_target_properties(LLVMDebuginfod PROPERTIES
-  INTERFACE_LINK_LIBRARIES "LLVMSupport"
+  INTERFACE_LINK_LIBRARIES "LLVMSupport;LLVMSymbolize"
 )
 
 # Create imported target LLVMDebugInfoDWARF
